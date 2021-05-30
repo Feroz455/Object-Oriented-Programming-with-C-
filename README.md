@@ -1,4 +1,4 @@
-# Object-Oriented-Programming-with-C-
+# Object-Oriented-Programming-with-C-Plus-plus-by-BALAGURUSAMY
 Chapter 01: The Big Picture
 This chapter introduces the over all basic concepts of object oriented programming in C++. [Note: No exercise problem is given in this chapter except some basic theoretical Q&A.]
 
