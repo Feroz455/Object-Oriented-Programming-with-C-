@@ -12,6 +12,7 @@ int main()
     cout << "Math       = " << 90 << "\n"
          << "Physics    = " << 77 << "\n"
          << "Chemistry  = " << 69 << "\n";
+    cout << "Lets look whats heppen" << endl;
 }
 /*
 output
