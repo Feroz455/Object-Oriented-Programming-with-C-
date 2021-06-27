@@ -18,6 +18,7 @@ int main()
     cout << "This is for github"<< endl;
     cout << "Lets look whats heppen" << endl;
     cout << "From git hub main page "<< " Master branch " << endl;
+    cout << "Totally ok" << endl;
 }
 /*
 output
