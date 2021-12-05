@@ -2,20 +2,23 @@
 Page 180
 program OVERLOADING OPERATORS USING FRIENDS
 */
+
+
 #include<iostream>
 #include<cstdio>
 using namespace std;
 const size_t size = 3;
 class vector
 {
-    int v[size];
+
 public:
+ int v[size];
     vector(); // constructor null vector
     vector(int *x); // constructor vector from array;
     friend vector operator*(int a, vector b); // friend 1
     friend vector operator*(vector b, int a); // friend 2
-    friend istream & operator >> (istream&, vector  //this function has return type ...which is not used in this program .
-    friend ostream & operator <<(ostream &, vector &);//can be make both this program return type void ,and will get appropiate result
+    friend void operator >> (istream&, vector &);//this function has return type ...which is not used in this program .
+    friend void  operator << (ostream &, vector &);//can be make both this program return type void ,and will get appropiate result
 
 };
 vector :: vector ()
@@ -52,16 +55,16 @@ vector operator*(vector b, int a)
     }
     return c;
 }
-istream & operator >> (istream &din, vector &b) //it should return istream pointer
+void operator >> (istream &din, vector &b) //it should return istream pointer
 {
     for(int i = 0; i < size; i++)
     {
         din >> b.v[i];
     }
-    return(din);
+
 }
 
-ostream & operator << (ostream &dout, vector &b)
+void operator << (ostream &dout, vector &b)
 {
     dout << "(" << b.v[0];
     for(int i = 1; i < size; i++)
@@ -69,7 +72,7 @@ ostream & operator << (ostream &dout, vector &b)
         dout << ", " << b.v[i];
     }
     dout << ")";
-    return(dout);
+
 }
 int x[size] = {2,4,6};
 //main begin
@@ -83,7 +86,9 @@ int main()
     cin >> m; //invokes operator>>() function
 
     cout << "\n";
-    cout << "m = " << m << "\n"; // invokes operator <<()
+    cout << "m = " ;
+    cout << m ;
+    cout << "\n"; // invokes operator <<()
 
     vector p, q;
 
@@ -91,13 +96,18 @@ int main()
     q = n * 2; // invokes friend 2
 
     cout << "\n";
-    cout << "p = " << p << "\n"; // invokes operators<<();
-    cout << "q = " << q << "\n";
+    cout << "p = ";
+    cout << p  ;
+    cout <<"\n"; // invokes operators<<();
+    cout << "q = ";
+    cout << q ;
+    cout << "\n";
 
 
     getchar();
     return 0;
 }
+
 //main end
 ///Program end
 
